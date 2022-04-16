@@ -1,26 +1,39 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="wrapper">
+      <Comments :comments="comments" :currentUser="currentUser"/>
+      <CurrentUser msg="send" :currentUser="currentUser" :img="true"/>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import get from './composables/getComments'
+import getCurrentUser from './composables/getCurrentUser'
+import CurrentUser from './components/CurrentUser.vue'
+import Comments from './components/Comments.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    CurrentUser,
+    Comments
+  },
+ setup() {
+   const key = 'http://localhost:3000/comments'
+   const keyTwo = 'http://localhost:3000/currentUser'
+   const {load, error, comments} = get(key)
+   const {loadCurrentUser, errorCurrentUser , currentUser} = getCurrentUser(keyTwo)
+   load()
+   loadCurrentUser()
+  console.log(error, errorCurrentUser)
+   return {
+     comments,
+     currentUser
+   }
+  },
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import '../public/css/style.css';
+
 </style>
