@@ -18,8 +18,8 @@ export default {
     Comments
   },
  setup() {
-   const key = 'http://localhost:3000/comments'
-   const keyTwo = 'http://localhost:3000/currentUser'
+   const key = 'https://interative.herokuapp.com/comments'
+   const keyTwo = 'https://interative.herokuapp.com/currentUser'
    const {load, error, comments} = get(key)
    const {loadCurrentUser, errorCurrentUser , currentUser} = getCurrentUser(keyTwo)
    load()

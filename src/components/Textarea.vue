@@ -38,7 +38,7 @@ export default {
           }
 
       if(this.msg.match('send')) {
-        this.methodFetch('http://localhost:3000/comments', "POST", person)
+        this.methodFetch('https://interative.herokuapp.com/comments', "POST", person)
       }
 
       if(this.msg.match('reply')) {
@@ -65,7 +65,7 @@ export default {
               this.comments.replies.push(reply)
 
               if(this.comments) {
-                this.methodFetch(`http://localhost:3000/comments/${this.id}`, "PUT", this.comments)
+                this.methodFetch(`https://interative.herokuapp.com/comments/${this.id}`, "PUT", this.comments)
               }
       }
       }
@@ -75,7 +75,7 @@ export default {
       this.comments.replies[this.repliesId-1].content = this.valueUpdate.replace(`@${this.username},`, '')
 
        if(this.comments) {
-         this.methodFetch(`http://localhost:3000/comments/${this.id}`, 'PUT', this.comments)
+         this.methodFetch(`https://interative.herokuapp.com/comments/${this.id}`, 'PUT', this.comments)
        }
       }
 
@@ -83,7 +83,7 @@ export default {
         this.comments.createdAt = new Date().toDateString();
         this.comments.content = this.valueUpdate
         if(this.comments) {
-          this.methodFetch(`http://localhost:3000/comments/${this.id}`, "PUT", this.comments)
+          this.methodFetch(`https://interative.herokuapp.com/comments/${this.id}`, "PUT", this.comments)
         }
       }
 

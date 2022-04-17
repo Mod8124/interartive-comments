@@ -21,7 +21,7 @@ export default {
     props:['id','repliesId','msg','currentUser','cancel'],
     mounted() {
     if(this.id) {
-      fetch(`http://localhost:3000/comments/${this.id}`)
+      fetch(`https://interative.herokuapp.com/comments/${this.id}`)
     .then(res => res.json())
     .then(data => this.comments = data)
     .catch(err => console.log(err))
@@ -36,7 +36,7 @@ export default {
                 return reply
             })
 
-            const data = await fetch(`http://localhost:3000/comments/${this.id}`, {
+            const data = await fetch(`https://interative.herokuapp.com/comments/${this.id}`, {
                 method:"PUT",
                 body:JSON.stringify(this.comments),
                 headers:{"Content-Type":"application/json"}
@@ -47,7 +47,7 @@ export default {
             }
             
           } else {
-              const data = await fetch(`http://localhost:3000/comments/${this.id}`, {
+              const data = await fetch(`https://interative.herokuapp.com/comments/${this.id}`, {
                     method:"DELETE"
               })
               const rest = await data.json()
