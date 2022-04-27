@@ -10,6 +10,7 @@ import get from './composables/getComments'
 import getCurrentUser from './composables/getCurrentUser'
 import CurrentUser from './components/CurrentUser.vue'
 import Comments from './components/Comments.vue'
+import { onMounted } from '@vue/runtime-core'
 
 export default {
   name: 'App',
@@ -22,8 +23,10 @@ export default {
    const keyTwo = 'https://interative.herokuapp.com/currentUser'
    const {load, error, comments} = get(key)
    const {loadCurrentUser, errorCurrentUser , currentUser} = getCurrentUser(keyTwo)
-   load()
    loadCurrentUser()
+   onMounted(()=> {
+      load()
+   })
   console.log(error, errorCurrentUser)
    return {
      comments,
