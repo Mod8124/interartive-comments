@@ -6,6 +6,10 @@
   font-family: "Rubik", sans-serif;
 }
 
+body {
+  background-color: #f5f6fa;
+}
+
 .moduleDelete {
   position: fixed;
   width: 100%;
@@ -287,6 +291,12 @@
 .comments .replyCurrentUserTwo .currentUser {
   width: 90%;
   margin-left: 10%;
+}
+
+.loading {
+  width: 100%;
+  text-align: center;
+  color: #5457b6;
 }
 
 @media screen and (max-width: 640px) {

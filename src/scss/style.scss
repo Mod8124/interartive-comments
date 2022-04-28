@@ -8,6 +8,7 @@
 }
 
 
+
 //primary Colors
 $ModerateBlue : hsl(238, 40%, 52%);
 $SoftRed:hsl(358, 79%, 66%);
@@ -21,6 +22,10 @@ $PaleRed : hsl(357, 100%, 86%);
  $VeryLightGray: hsl(228, 33%, 97%);
  $White: hsl(0, 0%, 100%);
 
+
+ body {
+    background-color: $VeryLightGray;
+ }
 // styles moduleDelete
 
 .moduleDelete {
@@ -370,6 +375,12 @@ $PaleRed : hsl(357, 100%, 86%);
        margin-left: 10%;
     }
 
+}
+
+.loading {
+    width: 100%;
+    text-align: center;
+    color:$ModerateBlue;
 }
 
 
