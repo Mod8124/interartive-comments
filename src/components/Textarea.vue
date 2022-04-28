@@ -104,7 +104,7 @@ export default {
   },
   mounted() {
     if(this.id) {
-      fetch(`http://localhost:3000/comments/${this.id}`)
+      fetch(`https://interative.herokuapp.com/comments/${this.id}`)
     .then(res => res.json())
     .then(data => this.comments = data)
     .catch(err => console.log(err))

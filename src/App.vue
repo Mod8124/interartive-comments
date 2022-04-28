@@ -23,9 +23,9 @@ export default {
    const keyTwo = 'https://interative.herokuapp.com/currentUser'
    const {load, error, comments} = get(key)
    const {loadCurrentUser, errorCurrentUser , currentUser} = getCurrentUser(keyTwo)
-   loadCurrentUser()
    onMounted(()=> {
       load()
+      loadCurrentUser()
    })
   console.log(error, errorCurrentUser)
    return {
