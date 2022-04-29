@@ -1,9 +1,9 @@
 <template>
   <div class="wrapper">
-    <div class="loading" v-if="!comments">
+    <div class="loading" v-if="!comments || !currentUser">
       <h2>Loading....</h2>
     </div>
-     <Comments :comments="comments" :currentUser="currentUser" v-if="comments"/>
+      <Comments :comments="comments" :currentUser="currentUser" v-if="comments"/>
       <CurrentUser msg="send" :currentUser="currentUser" :img="true"/>
   </div>
 </template>
