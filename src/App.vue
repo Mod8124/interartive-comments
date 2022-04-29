@@ -1,10 +1,10 @@
 <template>
   <div class="wrapper">
-    <div class="loading" v-if="!comments || !currentUser">
+    <div class="loading" v-if="!comments">
       <h2>Loading....</h2>
     </div>
      <Comments :comments="comments" :currentUser="currentUser" v-if="comments"/>
-      <CurrentUser msg="send" :currentUser="currentUser" :img="true" v-if="currentUser"/>
+      <CurrentUser msg="send" :currentUser="currentUser" :img="true"/>
   </div>
 </template>
 
