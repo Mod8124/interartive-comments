@@ -1,5 +1,8 @@
 <template>
-        <div class="comments" v-for="comment in sortByComment" :key="comment"><!--start comments-->
+       <div v-if="!sortByComment" class="loading"><h2>loading....</h2></div>
+
+       <div v-if="sortByComment"><!--start comment-->
+             <div class="comments" v-for="comment in sortByComment" :key="comment"><!--start comments-->
            <div class="comment"><!--start comment-->
              <div class="score">
                <button @click="comment.score++">+</button>
@@ -117,7 +120,8 @@
 
            </div><!--end reply-->
 
-        </div><!--end comments-->
+        </div><!--end comments-->    
+       </div><!--end comment-->
 </template>
 
 <script>
