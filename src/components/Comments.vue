@@ -1,7 +1,7 @@
 <template>
-       <div v-if="!sortByComment" class="loading"><h2>loading....</h2></div>
+       <div v-if="!sortByComment || !comments" class="loading"><h2>loading....</h2></div>
 
-       <div v-if="sortByComment"><!--start comment-->
+       <div v-else><!--start comment-->
              <div class="comments" v-for="comment in sortByComment" :key="comment"><!--start comments-->
            <div class="comment"><!--start comment-->
              <div class="score">
@@ -216,7 +216,7 @@ methods :{
     const currentUserReplyDelete = document.querySelector(`.currentUserReplyDelete[data-id="${e.target.dataset.id}"]`)
     this.addActive(currentUserReplyDelete)
   },
-}
+},
 }
 </script>
 

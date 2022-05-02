@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
-    <div class="loading" v-if="!comments"><h2>loading....</h2></div>
-      <Comments :comments="comments" :currentUser="currentUser" v-if="comments"/>
+    <div class="loading" v-if="show"><h2>loading....</h2></div>
+      <Comments :comments="comments" :currentUser="currentUser" v-else/>
       <CurrentUser msg="send" :currentUser="currentUser" :img="true"/>
   </div>
 </template>
@@ -11,7 +11,8 @@ import get from './composables/getComments'
 import getCurrentUser from './composables/getCurrentUser'
 import CurrentUser from './components/CurrentUser.vue'
 import Comments from './components/Comments.vue'
-import { onBeforeMount} from '@vue/runtime-core'
+import { onBeforeMount, onMounted} from '@vue/runtime-core'
+import {ref} from 'vue'
 
 export default {
   name: 'App',
@@ -23,17 +24,25 @@ export default {
    const key = 'https://interative.herokuapp.com/comments'
    const keyTwo = 'https://interative.herokuapp.com/currentUser'
    const {load, error, comments} = get(key)
+   const show = ref(true)
    const {loadCurrentUser, errorCurrentUser , currentUser} = getCurrentUser(keyTwo)
 
      onBeforeMount(()=> {
       load()
       loadCurrentUser()
    })
+
+   onMounted(() => {
+     setTimeout(()=> {
+       show.value = false
+     },2200)
+   })
   console.log(error, errorCurrentUser)
 
      return {
      comments,
-     currentUser
+     currentUser,
+     show
    }
 
   },
