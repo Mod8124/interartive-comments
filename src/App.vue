@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="loading" v-if="show"><h2>loading....</h2></div>
+    <div class="loading" v-if="show && comments"><h2>Loading <span>.</span><span>.</span><span>.</span><span>.</span></h2></div>
       <Comments :comments="comments" :currentUser="currentUser" v-else/>
       <CurrentUser msg="send" :currentUser="currentUser" :img="true"/>
   </div>
@@ -35,7 +35,7 @@ export default {
    onMounted(() => {
      setTimeout(()=> {
        show.value = false
-     },2200)
+     },2500)
    })
   console.log(error, errorCurrentUser)
 
