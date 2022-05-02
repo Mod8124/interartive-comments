@@ -35,7 +35,7 @@ export default {
    onMounted(() => {
      setTimeout(()=> {
        show.value = false
-     },2500)
+     },1600)
    })
   console.log(error, errorCurrentUser)
 
