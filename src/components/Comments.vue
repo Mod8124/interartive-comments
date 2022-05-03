@@ -1,7 +1,7 @@
 <template>
-       <div v-if="!sortByComment || !comments" class="loading"><h2>loading....</h2></div>
+       <div v-if="show" class="loading"><h2>loading....</h2></div>
 
-       <div v-else><!--start comment-->
+       <div v-if="!show"><!--start comment-->
              <div class="comments" v-for="comment in sortByComment" :key="comment"><!--start comments-->
            <div class="comment"><!--start comment-->
              <div class="score">
@@ -137,7 +137,8 @@ export default {
   },
   data() {
     return {
-      msgDelete:''
+      msgDelete:'',
+      show:true
     }
   },
   computed:{
@@ -217,6 +218,11 @@ methods :{
     this.addActive(currentUserReplyDelete)
   },
 },
+mounted() {
+  if(this.comments && this.sortByComment && this.currentUser) {
+    this.show = false
+  }
+}
 }
 </script>
 

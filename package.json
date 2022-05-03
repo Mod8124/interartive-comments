@@ -7,7 +7,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "sass": "sass --watch src/scss:public/css",
-    "dev": "json-server data/data.json",
+    "dev": "node server.js",
     "start": "concurrently \"json-server data/data.json\" \"node server.js\" "
   },
   "dependencies": {
