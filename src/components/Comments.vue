@@ -1,7 +1,5 @@
 <template>
-       <div v-if="show" class="loading"><h2>loading....</h2></div>
-
-       <div v-if="!show"><!--start comment-->
+       <div><!--start comment-->
              <div class="comments" v-for="comment in sortByComment" :key="comment"><!--start comments-->
            <div class="comment"><!--start comment-->
              <div class="score">
