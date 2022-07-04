@@ -1,5 +1,5 @@
 <template>
-    <div class="moduleDelete">
+    <section class="moduleDelete">
         <div class="cardDelete">
             <h2>Delete Comment</h2>
             <p>Are you sure you want to delete this comment? This will remove the comment and can't be undone.</p>
@@ -8,7 +8,7 @@
                 <button @click="btnDelete">Yes, delete</button>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>

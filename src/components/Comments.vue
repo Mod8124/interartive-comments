@@ -130,8 +130,8 @@ export default {
   name: 'Comments',
   props: ['comments','currentUser'],
   components:{
-  CurrentUser,
-  ModuleDelete
+    CurrentUser,
+    ModuleDelete
   },
   data() {
     return {
@@ -224,7 +224,6 @@ mounted() {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .replyCurrentUser, .replyCurrentUserTwo, .answerReply, .infoCommentReplyDelete, .currentUserUpdate, .currentUserReplyDelete  {
    display: none;
@@ -235,5 +234,4 @@ mounted() {
 .infoCommentReplyDelete.active, .currentUserUpdate.active, .answerReply.active, .replyCurrentUserTwo.active, .replyCurrentUser.active, .currentUserUpdate.active, .currentUserReplyDelete.active, .infoCommentContentOne.active   {
   opacity: 1;
 }
-
 </style>
